@@ -11,7 +11,9 @@ import javafx.scene.paint.Color;
  *
  * @author francois
  */
-public class FigureSimple {
+public abstract class FigureSimple extends Object {
+    
+    
     
     private Color couleur;
 
@@ -20,10 +22,10 @@ public class FigureSimple {
     }
 
     public FigureSimple() {
-        this.couleur = Color.GREEN;
+        this.couleur = Color.BLACK;
     }
     
-    
+    public abstract double maxX() ;
 
     /**
      * @return the couleur

@@ -17,10 +17,8 @@ public class PasApasGE5 {
         
         Point p2 = new Point(3,2);
         
-        Cercle c = new Cercle();
-        c.setRayon(3);
-        System.out.print("cercle de rayon : " + c.getRayon());
-        c.setRayon(-2);
-        System.out.print("cercle maintenant rayon : " + c.getRayon());
+        Cercle c = new Cercle(new Point(2,3),4);
+        System.out.println("couleur : " + c.getCouleur());
+        System.out.println("cercle " + c.toString());
     }
 }
