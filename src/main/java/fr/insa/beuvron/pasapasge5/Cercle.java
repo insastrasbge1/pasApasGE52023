@@ -33,6 +33,11 @@ public class Cercle extends FigureSimple {
           return this.centre.maxX() + this.rayon;
       } 
 
+    @Override
+      public double minX() {
+          return this.centre.minX() - this.rayon;
+      } 
+
     public double getRayon() {
         return this.rayon;
     }

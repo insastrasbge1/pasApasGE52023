@@ -26,6 +26,11 @@ public abstract class FigureSimple extends Object {
     }
     
     public abstract double maxX() ;
+    public abstract double minX() ;
+    
+    public double largeur() {
+        return this.maxX() - this.minX();
+    }
 
     /**
      * @return the couleur

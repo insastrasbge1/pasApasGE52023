@@ -20,5 +20,6 @@ public class PasApasGE5 {
         Cercle c = new Cercle(new Point(2,3),4);
         System.out.println("couleur : " + c.getCouleur());
         System.out.println("cercle " + c.toString());
+        System.out.println("largeur : " + c.largeur());
     }
 }

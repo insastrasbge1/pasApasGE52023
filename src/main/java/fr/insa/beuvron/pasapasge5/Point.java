@@ -11,39 +11,45 @@ import javafx.scene.paint.Color;
  *
  * @author francois
  */
-public class Point extends FigureSimple{
-    
+public class Point extends FigureSimple {
+
     private double px;
     private double py;
-    
+
     public Point() {
-        this(Color.BLACK,0,0);
+        this(Color.BLACK, 0, 0);
     }
-    
+
     public Point(Color couleur) {
-        this(couleur,0,0);
+        this(couleur, 0, 0);
     }
-    
-    public Point(Color couleur,double px,double py) {
+
+    public Point(Color couleur, double px, double py) {
         super(couleur);
         this.px = px;
         this.py = py;
     }
-    
-    public Point(double px,double py) {
-        this(Color.RED,px,py);
+
+    public Point(double px, double py) {
+        this(Color.RED, px, py);
     }
-    
-    public static Point origine() { 
+
+    public static Point origine() {
         Point res = new Point(Color.BLACK);
         return res;
     }
-    
+
     @Override
-       public double maxX() {
-           return this.px;
-                   
-       }
+    public double maxX() {
+        return this.px;
+
+    }
+
+    @Override
+    public double minX() {
+        return this.px;
+
+    }
 
     @Override
     public String toString() {
@@ -77,6 +83,5 @@ public class Point extends FigureSimple{
     public void setPy(double py) {
         this.py = py;
     }
-    
-    
+
 }
