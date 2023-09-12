@@ -12,8 +12,10 @@ public class PasApasGE5 {
 
     public static void main(String[] args) {
         Point p1 = new Point();
-        p1.px = 3;
+        p1.setPx(3);
         System.out.println("p1 : " + p1);
+        
+        Point p2 = new Point(3,2);
         
         Cercle c = new Cercle();
         c.setRayon(3);

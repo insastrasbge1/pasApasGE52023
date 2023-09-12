@@ -10,14 +10,50 @@ package fr.insa.beuvron.pasapasge5;
  */
 public class Point {
     
-    public double px;
-    public double py;
+    private double px;
+    private double py;
+    
+    public Point() {
+        this.px = 0;
+        this.py = 0;
+    }
+    
+    public Point(double px,double py) {
+        this.px = px;
+        this.py = py;
+    }
     
     public static Point origine() { 
         Point res = new Point();
-        res.px = 0;
-        res.py = 0;
         return res;
+    }
+
+    /**
+     * @return the px
+     */
+    public double getPx() {
+        return this.px;
+    }
+
+    /**
+     * @param px the px to set
+     */
+    public void setPx(double px) {
+        this.px = px;
+    }
+
+    /**
+     * @return the py
+     */
+    public double getPy() {
+        return py;
+    }
+
+    /**
+     * @param py the py to set
+     */
+    public void setPy(double py) {
+        this.py = py;
     }
     
     
