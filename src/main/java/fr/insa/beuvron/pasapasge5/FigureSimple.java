@@ -11,7 +11,9 @@ import javafx.scene.paint.Color;
  *
  * @author francois
  */
-public abstract class FigureSimple extends Object {
+public abstract class FigureSimple 
+        extends Object
+        implements SaitFaire {
     
     
     
@@ -27,6 +29,11 @@ public abstract class FigureSimple extends Object {
     
     public abstract double maxX() ;
     public abstract double minX() ;
+    
+    @Override
+    public void faitLe() {
+        System.out.println("je redessine "+this);
+    }
     
     public double largeur() {
         return this.maxX() - this.minX();
