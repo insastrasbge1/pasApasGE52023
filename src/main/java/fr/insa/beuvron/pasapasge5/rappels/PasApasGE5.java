@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package fr.insa.beuvron.pasapasge5;
+package fr.insa.beuvron.pasapasge5.rappels;
 
 /**
  *
