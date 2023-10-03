@@ -139,7 +139,7 @@ public class Testeur {
 
     public static void main(String[] args) {
 //        Debug.setNiveauMax(Debug.Niveau.INFO);
-        compareToutEtAffiche(1, Math.pow(10, 1.0 / 1), 6, 1000000, 1000, 1000);
+        compareToutEtAffiche(1, Math.pow(10, 1.0 / 1), 8, 1000000, 10000, 1000);
     }
 
 }
