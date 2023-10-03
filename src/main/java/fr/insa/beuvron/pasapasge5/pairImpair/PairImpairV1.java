@@ -4,9 +4,6 @@
  */
 package fr.insa.beuvron.pasapasge5.pairImpair;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author francois

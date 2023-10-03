@@ -19,4 +19,13 @@ public class ThreadUtils {
 
     }
 
+    public static void joinSansInterrupt(Thread t) {
+        try {
+            t.join();
+        } catch (InterruptedException ex) {
+            throw new Error(ex);
+        }
+
+    }
+
 }
