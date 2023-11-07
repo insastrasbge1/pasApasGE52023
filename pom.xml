@@ -68,6 +68,53 @@
                 </executions>
             </plugin>        
 
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <id>ServeurV1</id>
+                        <configuration>
+                            <finalName>ServeurV1</finalName>
+                            <!--<appendAssemblyId>false</appendAssemblyId>-->
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>fr.insa.beuvron.pasapasge5.sockets.v1.Serveur</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>clientV1</id>
+                        <configuration>
+                            <finalName>clientV1</finalName>
+                            <!--<appendAssemblyId>false</appendAssemblyId>-->
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>fr.insa.beuvron.pasapasge5.sockets.v1.Client</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
         
         <resources>
