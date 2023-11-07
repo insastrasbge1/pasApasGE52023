@@ -23,20 +23,31 @@ public class Serveur {
 
     public static void attendConnection() throws IOException {
         ServerSocket server = new ServerSocket(PORT);
-        System.out.println("attend le client");
-        Socket soc = server.accept();
-        System.out.println("client ok, attend ligne");
+        int nbrConnect = 0;
+        while (true) {
+            System.out.println("attend le client (nbr connectés : " + nbrConnect + ")");
+            Socket soc = server.accept();
+            nbrConnect++;
+            System.out.println("client " + nbrConnect + " connecté");
+            gereConnection(soc, nbrConnect);
+        }
+    }
+
+    public static void gereConnection(Socket soc, int nbr) throws IOException {
+        System.out.println("Gestion du client " + nbr + " commence");
         try (BufferedReader in
                 = new BufferedReader(
                         new InputStreamReader(
                                 soc.getInputStream(), Charset.forName("UTF8")))) {
             String nextLine;
-            while((nextLine = in.readLine()) != null) {
-                System.out.println("recu : " + nextLine);
+            int localPort = soc.getLocalPort();
+            while ((nextLine = in.readLine()) != null) {
+                System.out.println("recu de " + localPort + " : " + nextLine);
             }
+            System.out.println("Gestion du client " + nbr + " fini");
         }
     }
-    
+
     public static void main(String[] args) {
         try {
             attendConnection();

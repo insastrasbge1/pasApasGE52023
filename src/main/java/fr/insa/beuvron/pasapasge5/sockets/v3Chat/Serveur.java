@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fr.insa.beuvron.pasapasge5.sockets.v2;
+package fr.insa.beuvron.pasapasge5.sockets.v3Chat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,39 +29,11 @@ public class Serveur {
             Socket soc = server.accept();
             nbrConnect++;
             System.out.println("client " + nbrConnect + " connecté");
-            Thread gere = new Thread(new GereConnection(soc, nbrConnect));
+            Thread gere = new Thread(new GestionnaireConnection(soc, nbrConnect));
             gere.start();
         }
     }
 
-    public static class GereConnection implements Runnable {
-
-        private Socket soc;
-        private int nbr;
-
-        public GereConnection(Socket soc, int nbr) {
-            this.soc = soc;
-            this.nbr = nbr;
-        }
-
-        public void run() {
-            System.out.println("Gestion du client " + nbr + " commence");
-            try (BufferedReader in
-                    = new BufferedReader(
-                            new InputStreamReader(
-                                    soc.getInputStream(), Charset.forName("UTF8")))) {
-                String nextLine;
-                while ((nextLine = in.readLine()) != null) {
-                    System.out.println("recu de "
-                            + soc.getRemoteSocketAddress()
-                            + " : " + nextLine);
-                }
-                System.out.println("Gestion du client " + nbr + " fini");
-            } catch (IOException ex) {
-                throw new Error(ex);
-            }
-        }
-    }
 
     public static void main(String[] args) {
         try {

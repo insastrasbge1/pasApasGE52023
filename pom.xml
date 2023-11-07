@@ -112,6 +112,46 @@
                             <goal>single</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>ServeurV2</id>
+                        <configuration>
+                            <finalName>ServeurV2</finalName>
+                            <!--<appendAssemblyId>false</appendAssemblyId>-->
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>fr.insa.beuvron.pasapasge5.sockets.v2.Serveur</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>clientV2</id>
+                        <configuration>
+                            <finalName>clientV2</finalName>
+                            <!--<appendAssemblyId>false</appendAssemblyId>-->
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>fr.insa.beuvron.pasapasge5.sockets.v2.Client</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
 
